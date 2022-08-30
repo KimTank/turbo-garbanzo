@@ -16,5 +16,76 @@ ul,li {
     padding: 0;
 }
 
+/* 
+width: 800px 정확하게 800px으로 설정은 잘안한다. 800px로 정확하게 맞출일이 있을까
 
+min-width와 max-width로 viewport(모니터화면아니다.)로 제어한다.
+min-width: 800px => 800px을 넘어서면 변경됨
+max-width: 800px => 800px아래면 변경됨
+ */
+
+ /* 600과 800사이 적용 */
+/* @media(min-width: 600px) and (max-width: 800px){
+    h1{
+        color: purple;
+    }
+} */
+
+
+/* 선택자의 순서에따라 상위 red값은 적용되지 않고 아래 orange값만 적용된다. */
+@media(max-width: 500px){
+    h1 {
+        color: red;
+    }
+}
+@media(max-width: 1000px){
+    h1 {
+        color: orange;
+    }
+}
+
+/* 순서를 바꿀 시 원하는대로 적용된다. */
+@media(max-width: 1500px){
+    h1 {
+        color: yellow;
+    }
+}
+@media(max-width: 1000px){
+    h1 {
+        color: orange;
+    }
+}
+@media(max-width: 500px){
+    h1 {
+        color: red;
+    }
+}
+
+/* 일반적으로는 min-width를 쓰며, 이런형태도 가능하다. */
+h1 {
+    color: red;
+}
+@media(min-width: 500){
+    h1 {
+        color: yellow;
+    }
+}
+@media(min-width: 1000px){
+    h1 {
+        color: orange;
+    }
+}
+@media(min-width: 1500px){
+    h1 {
+        color: green;
+    }
+}
+
+/* 화면전환능 검사탭에서 기기를 폰으로 변경후 뒤집어보자(landscape) 
+*/
+@media(orientation: landscape){
+    body{
+        background-color: magenta;
+    }
+}
 
